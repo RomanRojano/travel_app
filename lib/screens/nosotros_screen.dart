@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:travel_app/main_drawer.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import '../screens/map_screen.dart';
+import 'package:flutter_launch/flutter_launch.dart';
 
 class NosotrosScreen extends StatelessWidget {
 
@@ -41,6 +42,13 @@ class NosotrosScreen extends StatelessWidget {
         );
     }
 
+    void whatsAppOpen() async {
+      await FlutterLaunch.launchWathsApp(
+          phone: '+526141848197',
+          message: 'Prueba de TravelApp'
+      );
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Nosotros'),
@@ -57,6 +65,62 @@ class NosotrosScreen extends StatelessWidget {
               buildTitleText('Av. Triunfo de la Republica #410 Col. San Felipe'),
               buildTitleText('Tel. (555) 555-1212'),
               buildTitleText('viajesponchito@ponchiviajes.com'),
+              buildTitleText('REDES SOLCIALES'),
+              new Row(
+                children: <Widget>[
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: GestureDetector(
+                        onTap: () {
+                          print('WhatsApp Pressed');
+                          whatsAppOpen();
+                        },
+                        child: new Container(
+                          alignment: Alignment.center,
+                          height: 40,
+                          decoration: new BoxDecoration(
+                            color: Colors.green[800],
+                            borderRadius:  new BorderRadius.circular(10)
+                          ),
+                          child: new Text("WhatsApp",
+                            style: new TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: GestureDetector(
+                        onTap: () {
+                          print('Facebook Pressed');
+                        },
+                        child: new Container(
+                          alignment: Alignment.center,
+                          height: 40,
+                          decoration: new BoxDecoration(
+                              color: Colors.blue[800],
+                              borderRadius:  new BorderRadius.circular(10)
+                          ),
+                          child: new Text("Facebook",
+                            style: new TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
               buildTitleText('UBICACION'),
               InkWell(
                 onTap: () {
