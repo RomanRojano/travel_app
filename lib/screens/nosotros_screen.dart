@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:travel_app/main_drawer.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import '../screens/map_screen.dart';
-import 'package:flutter_launch/flutter_launch.dart';
+//import 'package:flutter_launch/flutter_launch.dart';
 
 class NosotrosScreen extends StatelessWidget {
 
@@ -42,12 +42,12 @@ class NosotrosScreen extends StatelessWidget {
         );
     }
 
-    void whatsAppOpen() async {
+    /* void whatsAppOpen() async {
       await FlutterLaunch.launchWathsApp(
           phone: '+526141848197',
           message: 'Prueba de TravelApp'
       );
-    }
+    } */
 
     return Scaffold(
       appBar: AppBar(
@@ -74,7 +74,7 @@ class NosotrosScreen extends StatelessWidget {
                       child: GestureDetector(
                         onTap: () {
                           print('WhatsApp Pressed');
-                          whatsAppOpen();
+                          //whatsAppOpen();
                         },
                         child: new Container(
                           alignment: Alignment.center,
